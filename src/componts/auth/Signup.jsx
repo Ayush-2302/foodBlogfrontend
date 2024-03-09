@@ -1,4 +1,3 @@
-// Signup.js
 import React, { useContext, useState } from "react";
 import { contextFun } from "../../context/Context";
 import { useNavigate } from "react-router-dom";
