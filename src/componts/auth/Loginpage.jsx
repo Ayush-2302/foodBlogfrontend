@@ -29,9 +29,9 @@ const Loginpage = () => {
       if (json.success) {
         localStorage.setItem("token", json.authtoken);
         setTimeout(() => {
-          alert("login successfully");
+          toast.success("login successfully");
         }, 2000);
-        navigate("/");
+        navigate("/home");
       } else {
         // alert("Invalid Details");
         toast.error("Invalid Email or Password!");

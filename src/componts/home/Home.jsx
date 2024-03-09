@@ -30,7 +30,7 @@ function Home() {
     if (localStorage.getItem("token")) {
       loadData();
     } else {
-      toast.error("not able to access  without login");
+      toast.error("Not able to access  without login");
       navigate("/login");
     }
     // eslint-disable-next-line

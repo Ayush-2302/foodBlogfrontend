@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom';
 import { contextFun } from '../../context/Context';
+import { toast } from 'react-toastify';
 
 function Contact() {
   const navigate=useNavigate()
@@ -16,6 +17,7 @@ function Contact() {
     if(localStorage.getItem('token')){
     }
     else{
+      toast.error("Not able to access  without login");
       navigate("/login")
    }
      // eslint-disable-next-line
@@ -29,7 +31,7 @@ function Contact() {
       email: "",
       password: "",
     });
-    alert("We we contact you soon !");
+    toast("We we contact you soon !");
   };
   const onChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });

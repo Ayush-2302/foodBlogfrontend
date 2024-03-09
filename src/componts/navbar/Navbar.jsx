@@ -28,7 +28,7 @@ const Navbar = () => {
 
         <div className=" text-base  flex items-center font-bold text-white">
             <Link
-              to="/"
+              to="/home"
               className="block mt-4 lg:inline-block lg:mt-0  text-white hover:text-gray-200 hover:underline mr-4"
             >
               Home

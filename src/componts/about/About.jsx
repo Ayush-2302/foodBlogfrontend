@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import UserCarosel from "../contact/UserCarosel";
+import { toast } from "react-toastify";
 
 function About() {
   const navigate = useNavigate();
   useEffect(() => {
     if (localStorage.getItem("token")) {
     } else {
+      toast.error("Not able to access  without login");
       navigate("/login");
     }
     // eslint-disable-next-line
