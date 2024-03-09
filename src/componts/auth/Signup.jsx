@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { contextFun } from "../../context/Context";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+const port = "https://foodblogbackend.onrender.com";
 
 const Signup = () => {
   const { addUser } = useContext(contextFun);
@@ -12,17 +14,36 @@ const Signup = () => {
     password: "",
   });
   const navigate = useNavigate();
-  const handleSignUp = (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
-    addUser(user.name, user.location, user.email, user.password);
-    setUser({
-      name: "",
-      location: "",
-      email: "",
-      password: "",
+    const { name, email, password, location } = user;
+    const response = await fetch(`${port}/api/auth/createuser`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, location, email, password }),
     });
-    alert("user cerated");
-    navigate("/login");   
+    const json = await response.json();
+    console.log("user created", user);
+    console.log(json);
+    if (json.success) {
+      //save the auth token and redirect
+      localStorage.setItem("token", json.authtoken);
+      navigate("/login");
+
+      console.log(user);
+      setUser({
+        name: "",
+        location: "",
+        email: "",
+        password: "",
+      });
+      navigate("/login");
+      toast.success("Account Created Successfully", "success");
+    } else {
+      toast.error(" Invalid Credentials", "danger");
+    }
   };
   const onChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -44,10 +65,12 @@ const Signup = () => {
               type="text"
               id="name"
               name="name"
+              min={3}
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
               placeholder="Enter your name"
               onChange={onChange}
               value={user.name}
+              required={true}
             />
           </div>
           <div className="mb-4">
@@ -61,6 +84,7 @@ const Signup = () => {
               type="text"
               id="location"
               name="location"
+              required
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
               placeholder="Enter your location"
               onChange={onChange}
@@ -78,6 +102,7 @@ const Signup = () => {
               type="email"
               id="email"
               name="email"
+              required
               autoComplete="email"
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
               placeholder="Enter your email"
@@ -96,6 +121,7 @@ const Signup = () => {
               type="password"
               name="password"
               id="password"
+              required
               autoComplete="current-password"
               className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
               placeholder="Enter your password"

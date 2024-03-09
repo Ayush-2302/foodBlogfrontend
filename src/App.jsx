@@ -6,6 +6,9 @@ import Contact from "./componts/contact/Contact";
 import Loginpage from "./componts/auth/Loginpage";
 import Context from "./context/Context";
 import Footer from "./componts/footer/Footer";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Signup from "./componts/auth/Signup";
 
 function App() {
@@ -14,8 +17,9 @@ function App() {
       <Context>
         <Router>
           <Navbar />
+          <ToastContainer />
           <Routes>
-            <Route exact path="/" element={<Home/>} />
+            <Route exact path="/" element={<Home />} />
             {/* <Route exact path="/" element={<Landing />} /> */}
             <Route exact path="/about" element={<About />} />
             <Route exact path="/contact" element={<Contact />} />

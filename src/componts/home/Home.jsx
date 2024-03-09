@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Foodcard from "../../layout/cards/Foodcards";
 import { useNavigate } from "react-router-dom";
 import CarouselBasicExample from "./Carousel";
+import { toast } from "react-toastify";
 
 function Home() {
   const navigate = useNavigate();
@@ -29,6 +30,7 @@ function Home() {
     if (localStorage.getItem("token")) {
       loadData();
     } else {
+      toast.error("not able to access  without login");
       navigate("/login");
     }
     // eslint-disable-next-line

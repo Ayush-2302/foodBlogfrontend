@@ -2,6 +2,7 @@
 import React, { useContext, useState } from "react";
 import { contextFun } from "../../context/Context";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Loginpage = () => {
   const navigate = useNavigate();
@@ -31,8 +32,10 @@ const Loginpage = () => {
           alert("login successfully");
         }, 2000);
         navigate("/");
-      } else {4
-        alert("Invalid Details");
+      } else {
+        // alert("Invalid Details");
+        toast.error("Invalid Email or Password!");
+
       }
     } catch (error) {
       console.log(error.message);
