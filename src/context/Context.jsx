@@ -5,7 +5,7 @@ const contextFun = createContext();
 function Context(props) {
   const initialize = [];
   const [users, setUsers] = useState(initialize);
-  const port = "http://localhost:4040";
+  const port = "https://foodblogbackend.onrender.com";
 
   const addUser = async (name, location, email, password) => {
     try {
