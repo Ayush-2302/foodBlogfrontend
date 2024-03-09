@@ -6,7 +6,7 @@ const Foodcard = ({name,img,desc}) => {
     <div className="max-w-md mx-auto bg-[#302f2f] rounded-xl overflow-hidden shadow-lg">
       <img
         className="w-full h-48 object-cover"
-        src={img} // Replace with your image URL
+        src={img}// Replace with your image URL
         alt="Card Image"
       />
       <div className="p-6">

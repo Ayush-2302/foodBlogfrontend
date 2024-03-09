@@ -63,7 +63,7 @@ function Home() {
                               <div key={fItem._id} className=" flex ">
                                 <Foodcard
                                   name={fItem.name}
-                                  img={fItem.img}
+                                  img={fItem.img} 
                                   desc={fItem.description}
                                 />
                               </div>
