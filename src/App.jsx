@@ -4,10 +4,9 @@ import Home from "./componts/home/Home";
 import About from "./componts/about/About";
 import Contact from "./componts/contact/Contact";
 import Loginpage from "./componts/auth/Loginpage";
-import Signup from "./componts/auth/signup";
 import Context from "./context/Context";
 import Footer from "./componts/footer/Footer";
-// import Landing from "./dummy/Landing";
+import Signup from "./componts/auth/Signup";
 
 function App() {
   return (
