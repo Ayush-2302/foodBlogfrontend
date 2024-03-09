@@ -11,7 +11,7 @@ function Home() {
   const [fitem, setFitem] = useState(inital);
   const loadData = async () => {
     const response = await fetch(
-      `http://localhost:4040/api/displaydata/f_data`,
+      `https://foodblogbackend.onrender.com/api/displaydata/f_data`,
       {
         method: "POST",
         headers: {
