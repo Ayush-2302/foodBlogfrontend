@@ -31,11 +31,10 @@ const Loginpage = () => {
         setTimeout(() => {
           toast.success("login successfully");
         }, 2000);
-        navigate("/home");
+        navigate("/");
       } else {
         // alert("Invalid Details");
         toast.error("Invalid Email or Password!");
-
       }
     } catch (error) {
       console.log(error.message);
@@ -50,7 +49,7 @@ const Loginpage = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center ">
-      <div className=" p-8 bg-[#302f2f] rounded shadow-md w-1/2">
+      <div className=" p-8 bg-[#302f2f] rounded shadow-md md:w-1/2 w-11/12">
         <h2 className="text-2xl font-bold mb-6">Login</h2>
         <form onSubmit={handleLogin}>
           <div className="mb-4">

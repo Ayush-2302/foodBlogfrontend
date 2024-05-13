@@ -38,8 +38,8 @@ function Contact() {
   };
  
   return (
-    <div className="min-h-screen flex items-center justify-center ">
-    <div className="bg-[#302f2f] p-8 rounded shadow-lg w-1/2">
+    <div className="min-h-screen flex items-center justify-center p-10 ">
+    <div className="bg-[#302f2f] p-8 rounded shadow-lg w-11/12 sm:w-1/2  ">
       <h2 className="text-2xl font-bold mb-6">Contact Us !</h2>
       <form>
         <div className="mb-4">
@@ -102,7 +102,7 @@ function Contact() {
             Number
           </label>
           <input
-            type="password"
+            type="number"
             name="password"
             id="password"
             autoComplete="current-password"

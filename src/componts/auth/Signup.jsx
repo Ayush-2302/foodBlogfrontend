@@ -51,7 +51,7 @@ const Signup = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center ">
-      <div className="bg-[#302f2f] p-8 rounded shadow-lg w-1/2">
+      <div className="bg-[#302f2f] p-8 rounded shadow-lg md:w-1/2 w-11/12">
         <h2 className="text-2xl font-bold mb-6">Sign Up</h2>
         <form>
           <div className="mb-4">

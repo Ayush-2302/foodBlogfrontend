@@ -45,29 +45,27 @@ function About() {
               </p>
             </div>
           </div>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 ">
             <img
               src="https://images.unsplash.com/photo-1592861956120-e524fc739696?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJlc3RhdXJhbnR8ZW58MHx8MHx8fDA%3D"
               alt="Restaurant"
-              className="rounded-lg shadow-md"
+              className="rounded-lg shadow-md mx-auto"
             />
             <img
               src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJlc3RhdXJhbnR8ZW58MHx8MHx8fDA%3D"
               alt="Restaurant"
-              className="rounded-lg shadow-md"
+              className="rounded-lg shadow-md mx-auto"
             />
             <img
               src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D"
               alt="Restaurant"
-              className="rounded-lg shadow-md"
+              className="rounded-lg shadow-md mx-auto"
             />
           </div>
         </div>
       </div>
-      <div className="p-16">
-
-      <UserCarosel/>
-
+      <div className="md:px-36 md:py-10">
+        <UserCarosel />
       </div>
     </div>
   );

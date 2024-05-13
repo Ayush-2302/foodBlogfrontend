@@ -27,19 +27,13 @@ function Home() {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("token")) {
-      loadData();
-    } else {
-      toast.error("Not able to access  without login");
-      navigate("/login");
-    }
+    loadData();
     // eslint-disable-next-line
   }, []);
 
   return (
     <>
-
-    <CarouselBasicExample/>
+      <CarouselBasicExample />
       <div className="  ">
         {fcatagory !== inital
           ? fcatagory.map((data) => {
@@ -65,7 +59,7 @@ function Home() {
                               <div key={fItem._id} className=" flex ">
                                 <Foodcard
                                   name={fItem.name}
-                                  img={fItem.img} 
+                                  img={fItem.img}
                                   desc={fItem.description}
                                 />
                               </div>

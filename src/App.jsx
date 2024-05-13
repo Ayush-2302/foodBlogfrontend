@@ -19,7 +19,7 @@ function App() {
           <Navbar />
           <ToastContainer />
           <Routes>
-            <Route exact path="/home" element={<Home />} />
+            <Route exact path="/" element={<Home />} />
             {/* <Route exact path="/" element={<Landing />} /> */}
             <Route exact path="/about" element={<About />} />
             <Route exact path="/contact" element={<Contact />} />
